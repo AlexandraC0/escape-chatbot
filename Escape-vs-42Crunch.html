@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Escape vs 42Crunch</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        :root {
+            --button-bg-color: #ffffff;
+            --button-text-color: var(--color-darkgrey);
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Titillium+Web:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" type="text/css" href="/blog/assets/built/screen.css?v=1021adb4b4" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+    <meta name="description" content="Explore why customers prefer Escape over 42Crunch, weigh the advantages and disadvantages of both, and determine the best fit for your company">
+    <link rel="icon" href="https://escape.tech/blog/content/images/size/w256h256/2021/09/ESCAPE-LOGO-28-07-2021-08_1000.png" type="image/png">
+    <link rel="canonical" href="https://escape.tech/blog/escape-vs-42-crunch/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://escape.tech/blog/escape-vs-42-crunch/amp/">
+    
+    <meta property="og:site_name" content="Escape - The API Security Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Escape vs 42Crunch">
+    <meta property="og:description" content="Explore why customers prefer Escape over 42Crunch, weigh the advantages and disadvantages of both, and determine the best fit for your company">
+    <meta property="og:url" content="https://escape.tech/blog/escape-vs-42-crunch/">
+    <meta property="og:image" content="https://escape.tech/blog/content/images/2023/10/42crunch-escape-comparison.png">
+    <meta property="article:published_time" content="2023-10-26T12:39:48.000Z">
+    <meta property="article:modified_time" content="2023-10-27T12:40:05.000Z">
+    <meta property="article:tag" content="Competitor Comparison">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Escape vs 42Crunch">
+    <meta name="twitter:description" content="Explore why organizations prefer Escape over 42Crunch. Less setup complexity, more coverage, and visibility.">
+    <meta name="twitter:url" content="https://escape.tech/blog/escape-vs-42-crunch/">
+    <meta name="twitter:image" content="https://escape.tech/blog/content/images/2023/10/42crunch-escape-comparison-1.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Escape">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Competitor Comparison">
+    <meta name="twitter:site" content="@EscapeTechHQ">
+    <meta property="og:image:width" content="1050">
+    <meta property="og:image:height" content="586">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Escape - The API Security Blog",
+        "url": "https://escape.tech/blog/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://escape.tech/blog/content/images/2022/05/escape-logo.0e6d59f.svg",
+            "width": 141,
+            "height": 36
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Escape",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://escape.tech/blog/content/images/2021/09/ESCAPE-LOGO-28-07-2021-06.jpg",
+            "width": 2000,
+            "height": 2000
+        },
+        "url": "https://escape.tech/blog/author/escape/",
+        "sameAs": []
+    },
+    "headline": "Escape vs 42Crunch",
+    "url": "https://escape.tech/blog/escape-vs-42-crunch/",
+    "datePublished": "2023-10-26T12:39:48.000Z",
+    "dateModified": "2023-10-27T12:40:05.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://escape.tech/blog/content/images/2023/10/42crunch-escape-comparison.png",
+        "width": 1050,
+        "height": 586
+    },
+    "keywords": "Competitor Comparison",
+    "description": "Today, attackers prioritize exploiting an application&#x27;s business logic flaws and API vulnerabilities, which may result in the unauthorized extraction of sensitive data. Understanding an application&#x27;s business logic is challenging, and requires a security platform that comprehends an application&#x27;s functionalities to address complex API attacks.\n\nEscape is the only API Security solution that combines the capabilities of API inventory, API Security testing, and business logic security testing with ",
+    "mainEntityOfPage": "https://escape.tech/blog/escape-vs-42-crunch/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.69">
+    <link rel="alternate" type="application/rss+xml" title="Escape - The API Security Blog" href="https://escape.tech/blog/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false" data-ghost="https://escape.tech/blog/" data-key="0e4cafc1e55c09b1ec7809b460" data-api="https://escape.tech/blog/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="0e4cafc1e55c09b1ec7809b460" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://escape.tech/blog/" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/announcement-bar@~1.1/umd/announcement-bar.min.js" data-announcement-bar="https://escape.tech/blog/" data-api-url="https://escape.tech/blog/members/api/announcement/" crossorigin="anonymous"></script>
+    <link href="https://escape.tech/blog/webmentions/receive/" rel="webmention">
+    <script defer src="/blog/public/cards.min.js?v=1021adb4b4"></script>
+    <link rel="stylesheet" type="text/css" href="/blog/public/cards.min.css?v=1021adb4b4">
+    <script defer src="/blog/public/member-attribution.min.js?v=1021adb4b4"></script>
+    <script id="userled-sdk-snippet">
+  window.userledSettings={app_id:"21ef73bb-cd0a-4f2b-a193-fa051a5974a1"},window.userledSnippetTs=(new Date).getTime(),(function(){if(!window.Userled){window.Userled=function(){return e.call(arguments)};var e=window.Userled;e.call=function(n){return new Promise((function(i,d){e.queue.push([].concat.apply([i,d],n))}))},e.queue=[],e.snippetVersion="4.0.0",window.Userled("page")}})();
+</script>
+<script id="userled-sdk" type="module" src="https://sdk.userledclient.io?appId=21ef73bb-cd0a-4f2b-a193-fa051a5974a1&snippetVersion=4.0.0" data-cfasync="false"></script>
+
+
+<!-- Google tag (gtag.js): Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-234004425-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-234004425-1');
+    </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KYN4GPPPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0KYN4GPPPE');
+</script>
+<script>
+    var gh_white_logo = 'https://escape.tech/assets/escape-logo.png';
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics - whole website-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FTS8Y5Z4N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5FTS8Y5Z4N');
+    </script>
+
+ <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MDMBJH6V');
+    </script>
+    <!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager - blog-->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','data layer,'GTM-MLMM8LHP');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    var gh_white_logo = 'https://escape.tech/assets/escape-logo.png';
+</script>
+
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="WIHBBNEH" defer></script>
+<!-- / Fathom -->
+<!-- Schema -->
+<script type="application/ld+json">
+ {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://escape.tech/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://escape.tech/blog"
+      }]
+    }
+</script>
+<!-- Schema -->
+<style>
+.container.large {
+    max-width: calc(750px + 8vw);
+}
+</style>
+<script>
+    var gh_white_logo = "https://i.ibb.co/cx8zN47/ESCAPE-LOGO-28-07-2021-02.png"
+</script>
+
+
+<!-- Prism.js - syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+.gh-head {
+    position: -webkit-sticky; /* Older Safari browsers */
+    position: sticky; /* Most other modern browsers including Safari */
+    top: 0;
+    z-index: 4000;
+}
+/* Shine Case study style */
+#strongshine-chose-escape-to-enhance-its-application-security-achieve-a-thorough-inventory-of-their-apis-and-help-developers-fix-issues-quicklystrong,
+#within-a-week-shine-covered-four-applications-accounting-for-300-endpoints-this-rapid-coverage-led-to-the-discovery-and-fixing-of-at-least-strong2-critical-vulnerabilities-in-less-than-24-hours-post-discoverystrong {
+  width: 65%;
+  font-size: 30px;
+  color: #01e2b7;
+}
+@media (max-width: 640px) {
+  #strongshine-chose-escape-to-enhance-its-application-security-achieve-a-thorough-inventory-of-their-apis-and-help-developers-fix-issues-quicklystrong,
+  #within-a-week-shine-covered-four-applications-accounting-for-300-endpoints-this-rapid-coverage-led-to-the-discovery-and-fixing-of-at-least-strong2-critical-vulnerabilities-in-less-than-24-hours-post-discoverystrong {
+    width: 90%;
+	font-size: 1.2em;
+  }
+}
+#strongstart-securing-your-apis-for-freestrong {
+  margin-bottom: 0.5em;
+}
+.kg-header-card a.kg-header-card-button {
+  display: inline-block !important;
+  padding: 20px 16.5px !important;
+  font-size: 1.4rem !important;
+  font-size: 20px !important;
+  line-height: 0.325em !important;
+  color: #1a1b3d !important;
+  background-color: #05e2b7 !important;
+  border-radius: 6px !important;
+}
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css" rel="stylesheet"><style>:root {--ghost-accent-color: #1A1B3D;}</style>
+
+</head>
+<body class="post-template tag-competitor-comparison has-sans-body">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head">
+        <nav class="gh-head-inner inner gh-container">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="https://escape.tech/blog">
+                        <img width="140" src="https://escape.tech/blog/content/images/2022/05/escape-logo.0e6d59f.svg" alt="Escape - The API Security Blog"  />
+                </a>
+                <div class="mobile-cta-container">
+                    <a style="border-radius: 6px; background-color: #05e2b7; color: #1a1b3d; margin-right: 0; font-weight: 600; padding: 10px;" href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=navbar&utm_medium=blog">GET A DEMO</a>
+                </div>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-escape-platform"><a href="https://escape.tech">Escape Platform</a></li>
+    <li class="nav-case-studies"><a href="https://escape.tech/blog/tag/case-study/">Case studies</a></li>
+    <li class="nav-best-practices"><a href="https://escape.tech/blog/tag/best-practices/">Best Practices</a></li>
+</ul>
+
+                <div class="gh-head-actions">
+                <a class="try-for-free-button" style="border-radius: 6px; background-color: #05e2b7; color: #1a1b3d; margin-right: 27px; font-weight: 600; padding: 10px;" href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=navbar&utm_medium=blog">GET A DEMO</a>
+                <button class="gh-search-icon" aria-label="search" data-ghost-search style="display: inline-flex; justify-content: center; align-items: center; width: 32px; height: 32px; padding: 0 8px; border: 0; color: inherit; background-color: transparent; cursor: pointer; outline: none; margin: 0 10px;">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M14.949 14.949a1 1 0 0 1 1.414 0l6.344 6.344a1 1 0 0 1-1.414 1.414l-6.344-6.344a1 1 0 0 1 0-1.414Z" fill="currentColor"/><path d="M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm-9 7a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z" fill="currentColor"/></svg>
+                </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        
+
+
+
+<main id="site-main" class="site-main">
+    <article class="article post tag-competitor-comparison image-small">
+
+        <header class="article-header gh-canvas">
+
+            <section class="article-tag">
+                <a href="https://escape.tech/blog/tag/competitor-comparison/">Competitor Comparison</a>
+            </section>
+
+            <h1 class="article-title">Escape vs 42Crunch</h1>
+
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <a href="/blog/author/escape/" class="author-avatar">
+                                <img class="author-profile-image" src="/blog/content/images/size/w100/2021/09/ESCAPE-LOGO-28-07-2021-06.jpg" alt="Escape" />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="article-byline-meta">
+                        <h4 class="author-name"><a href="/blog/author/escape/">Escape</a></h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date" datetime="2023-10-26">Oct 26, 2023</time>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> 7 min read</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <figure class="article-image">
+                <picture>
+                    <!-- Serve the WebP format if the browser supports it -->
+                    <source
+                        srcset="/blog/content/images/size/w300/format/webp/2023/10/42crunch-escape-comparison.png 300w,
+                                /blog/content/images/size/w600/format/webp/2023/10/42crunch-escape-comparison.png 600w,
+                                /blog/content/images/size/w1000/format/webp/2023/10/42crunch-escape-comparison.png 1000w,
+                                /blog/content/images/size/w2000/format/webp/2023/10/42crunch-escape-comparison.png 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        type="image/webp"
+                    >
+                     <!-- Serve original file format as a fallback -->
+                    <img
+                        srcset="/blog/content/images/size/w300/2023/10/42crunch-escape-comparison.png 300w,
+                                /blog/content/images/size/w600/2023/10/42crunch-escape-comparison.png 600w,
+                                /blog/content/images/size/w1000/2023/10/42crunch-escape-comparison.png 1000w,
+                                /blog/content/images/size/w2000/2023/10/42crunch-escape-comparison.png 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        src="/blog/content/images/size/w2000/2023/10/42crunch-escape-comparison.png"
+                        alt="Escape vs 42Crunch"
+                    />
+                </picture>
+            </figure>
+        </header>
+
+        <section class="gh-content gh-canvas">
+            <p>Today, attackers prioritize exploiting an application's business logic flaws and API vulnerabilities, which may result in the unauthorized extraction of sensitive data. Understanding an application's business logic is challenging, and requires a security platform that comprehends an application's functionalities to address complex <a href="https://escape.tech/blog/what-is-api-attack-and-how-to-stop/" rel="noreferrer">API attacks</a>.</p><p>Escape is the only API Security solution that combines the capabilities of API inventory, API Security testing, and business logic security testing with a shift-left approach. Unlike DAST and classic API Security tools, Escape does not only find vulnerabilities but also helps security teams automate their API inventory without any agent. </p><p>In this article, we will highlight key differences between Escape and 42Crunch that can impact the protection of your organization's sensitive data.  But first, let's lay the foundation by defining the key elements for our comparison.</p><div class="toc"></div>
+<style>
+.toc:before {
+  content: "Table of contents";
+  display: block;
+  margin-bottom: 20px;
+  font-size: larger;
+  font-weight: bold;
+  border-bottom: 1px dashed #dadada;
+  padding-bottom: 10px;
+}
+.toc {
+  padding: 30px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+a.toc-link {
+  font-size: 80%;
+  text-decoration: none;
+}
+li.toc-list-item {
+    margin-top: 0;
+}
+.toc-list .is-collapsible {
+  margin-left: 15px;
+  color: #666;
+}
+</style><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">This article is just one in the series of comparisons we're presenting, where we put Escape head-to-head with other API security tools. But don't worry, there's more to come! You can follow each new publication <a href="https://escape.tech/blog/tag/competitor-comparison/" rel="noreferrer">right here</a>. Rest assured, our ongoing series will consistently feature the same key elements for comparison, so feel free to dive straight into the <a href="https://escape.tech/blog/escape-vs-42-crunch/#lets-zoom-in-on-the-details" rel="noreferrer">zoom-in section</a> if you've already read it before.</div></div><h2 id="features-of-the-best-api-security-tools"><strong>Features of the best API security tools</strong></h2><p>When it comes to keeping your APIs safe, you need a good API security solution. Let's examine the main features that make the best API security tools special.</p><h3 id="api-discovery-inventory">API Discovery &amp; Inventory </h3><p>Don’t know what your developers expose online? Here is when API Discovery and Inventory come into play. Every undocumented API feels like a ticking time bomb, a potential gateway for malicious breaches.</p><p>To ensure that the organization's data and services remain protected and bridge the gap between innovation and security, your top priority is to create a comprehensive inventory of all used APIs.<br><br><a href="https://escape.tech/blog/what-is-api-discovery-and-how-does-it-work/" rel="noreferrer">In this article, </a>you can find why API discovery is important and what the difference is between automated and manual approaches. </p><p><strong>Automated&nbsp;API Discovery tools</strong>&nbsp;are indispensable to ensure efficiency, accuracy, and comprehensive coverage. Manual discovery should be seen as a complementary approach rather than the primary method in modern API management.</p><h3 id="cicd-pipeline-integration">CI/CD Pipeline Integration</h3><p>If you want to catch and fix security issues early in your development process, you must integrate security within your CI/CD pipeline. It ensures your applications are built securely from the ground up and helps your organization to<em> </em>shift left in the testing of APIs.</p><h3 id="support-in-remediation">Support in remediation</h3><p>Tired of struggling with developers to implement security in the SDLC? Making life easier for your developers is important to ensure swift security fixes. Detailed code snippet remediation helps break down complex security issues into simple, actionable steps, so your developers can quickly fix any problems that pop up.</p><h3 id="ease-of-deployment">Ease of deployment</h3><p>No one wants a complicated implementation process. The faster you can start discovering and scanning your APIs, the faster you can secure your organization.  Agentless solutions are your best bet: they enable data gathering without the need to alter the application's code or insert any agents into the application's communication path. </p><p>No fuss, just quick and efficient protection.</p><h3 id="testing-undocumented-apis">Testing undocumented APIs</h3><p>Hidden vulnerabilities pose a significant risk. It's critical to discover and test undocumented APIs to find those hidden weaknesses and keep your data safe from potential threats.</p><p>Do you also want to ensure that your organization fully complies with HIPAA or GDPR (<a href="https://nordicapis.com/act-now-before-the-gdpr-deadline/?ref=escape.tech" rel="noreferrer">discover here how GDPR affects APIs</a>)? Then, you need to ensure the security of all APIs, including those that are undocumented. Testing is crucial for ensuring compliance with these and many other regulations.</p><h3 id="contextual-risk-based-prioritization">Contextual risk-based prioritization</h3><p>Prioritizing security risks is vital. Contextual Risk-Based Prioritization is a strategy used in risk management and security to determine the priority of addressing vulnerabilities or threats based on their potential impact and context within a specific environment.</p><p>It helps you focus on what's most important first, making sure you're directing your efforts where they matter the most. </p><h2 id="head-to-head-comparison-escape-vs-42crunch"><strong>Head-to-head comparison: Escape vs 42Crunch</strong></h2><p>Now, let's dive in on how Escape compares to 42Crunch based on the factors above. <br>Here you can find the head-to-head comparison of both tools: </p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://escape.tech/blog/content/images/2023/10/table-escape-vs-42crunch-1.png" class="kg-image" alt loading="lazy" width="1414" height="2000" srcset="https://escape.tech/blog/content/images/size/w600/2023/10/table-escape-vs-42crunch-1.png 600w, https://escape.tech/blog/content/images/size/w1000/2023/10/table-escape-vs-42crunch-1.png 1000w, https://escape.tech/blog/content/images/2023/10/table-escape-vs-42crunch-1.png 1414w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Head-to-head comparison: Escape vs 42Crunch</span></figcaption></figure><h2 id="lets-zoom-in-on-the-details">Let's zoom in on the details</h2><h3 id="42crunch">42Crunch</h3><p>42Crunch offers a platform featuring automated tools designed to enhance the security of APIs throughout the software development lifecycle. Leveraging an API security model based on testing OpenAPI/Swagger files, 42Crunch can streamline security evaluations across your CI/CD pipelines. </p><p>This process involves security testing to provide security scores and remediation advice for addressing vulnerabilities directly to developers within their integrated development environment (IDE), as well as a real-time security enforcement mechanism through an API firewall.</p><p>Escape and 42Crunch share common benefits, such as the integration of security testing in CI/CD and detailed remediations for developers. In the paragraphs below, we'll explore the differences between the two.</p><p><strong>Deployment - OpenAPI contract</strong></p><p>42Crunch requires defining all the elements of your API in an OpenAPI contract before scanning.<em> </em>OpenAPI specifications present an initial challenge, as they require constant attention for updates and maintenance. Imagine what if a developer doesn't update these files at the right time? Imagine the potential risks if a developer fails to update these files in time; it could provide attackers with an opportunity to exploit your APIs. </p><p><strong>Support for various API types</strong></p><p>While REST remains prevalent in the world of APIs, GraphQL is rapidly gaining popularity, especially when speed is crucial. It excels in minimizing unnecessary client queries through its unique query definition capabilities. With the increasing adoption of federated GraphQL structures, having a solution that can support multiple API types has become essential.</p><p>Unfortunately, 42Crunch is limited to supporting only documented REST APIs.</p><p><strong>API Discovery</strong></p><p>Automating API discovery is critical for maintaining an up-to-date and accurate API inventory, particularly one that highlights sensitive information. While 42Crunch supports discovery in GitHub, <strong>it</strong> <strong>cannot identify any external APIs</strong>. To effectively manage your APIs, you need a solution capable of detecting every API endpoint within your applications. This will empower your team to identify both unknown and vulnerable APIs. More than that, you must ensure that all your APIs, whether external or internal, adhere to standards like HIPAA, GDPR, or others, to protect sensitive data. You can't secure what you can't see. </p><h3 id="escape">Escape</h3><p><strong>Automated API Discovery &amp; Inventory </strong></p><p>Escape offers a unique approach to API security through agentless, automated scanning. You can gain a complete view of all your exposed APIs, along with their context, within just minutes.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://escape.tech/blog/content/images/2023/10/api-discovery-feature-escape.png" class="kg-image" alt loading="lazy" width="1000" height="498" srcset="https://escape.tech/blog/content/images/size/w600/2023/10/api-discovery-feature-escape.png 600w, https://escape.tech/blog/content/images/2023/10/api-discovery-feature-escape.png 1000w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">API Inventory in Escape</span></figcaption></figure><p>Escape scans IP ranges and domains to collect key data about discovered APIs, including endpoint URLs, methods, response codes, and metadata, identifying potential security risks and attack paths. Additionally, we can crawl through your Postman collections, GitHub, and GitLab repositories to detect internal APIs.<br><br>This enables customers to gain visibility into all external and internal APIs, assess potential vulnerabilities or sensitive data exposure, and ensure a prioritized and effective response.</p><p><strong>Unparalleled support for GraphQL APIs  </strong></p><p>Escape's GraphQL security scanner is currently the best on the market, with an ultra-low false positive rate. </p><p><strong>Automated Security in CI/CD </strong></p><p>Escape is a dynamic application scanner, and its scans can be triggered through the following usages:</p><ul><li>GitHub action</li><li>Gitlab pipelines</li><li>Bitbucket Pipelines</li><li>on CircleCI</li><li>in Jenkins Pipeline</li><li>Azure DevOps</li><li>Anywhere else using our public API</li><li>Anywhere else using our&nbsp;<a href="https://www.npmjs.com/package/@escape.tech/action?ref=escape.tech" rel="noopener noreferrer"><code>npm</code>&nbsp;package</a></li></ul><p>For its Enterprise customers, Escape also offers <strong>custom security tests</strong>.</p><p><strong>Hassle-free Implementation </strong></p><p>Escape offers both agentless and agent-based implementation, but it's the agentless solution that truly stands out. It doesn't require access to customer data, allowing you to obtain a full inventory and start testing your APIs within minutes.</p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">Check out how one of our customers has <a href="https://escape.tech/blog/case-study-thinkific/" rel="noreferrer"><b><strong style="white-space: pre-wrap;">achieved a reduction of the API security risk</strong></b></a><b><strong style="white-space: pre-wrap;"> by 50%</strong></b>&nbsp;in the first weeks of usage.</div></div><p><strong>Tailored Remediation Support </strong></p><p>Escape is developer-friendly, providing context and detailed remediations of all its findings. It fingerprints the backend framework the API is built with, providing specific and detailed steps to identify and remediate vulnerabilities.</p><blockquote><em>"Escape - is the only security scanner for GraphQL that is engine aware and developer friendly."<br>Aleksandr Krasnov,</em>&nbsp;<em>Staff Security Engineer, Thinkific</em></blockquote><h2 id="why-customers-choose-escape-over-42crunch">Why customers choose Escape over 42Crunch</h2><p>We hope this comparison was useful. So, let's wrap it up!</p><p>To put it simply, if you're looking for an agentless API security solution that automates API discovery, secures all your APIs, and can be implemented within minutes, Escape is your best bet. This is especially true if you have GraphQL APIs in your stack, as 42Crunch is unable to provide support for APIs outside of documented REST APIs and can only discover APIs present on GitHub.</p><p>Discovering your APIs and running security scans with Escape is simple. You or your security team can have it up and running within minutes. You will get full security observability, helping you focus on the most effective prioritization and response, and get developers on board with security in the SDLC. </p><p>Escape offers a free trial to help you experience the platform's power before making your final decision. </p><figure class="kg-card kg-image-card"><a href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=content&utm_medium=referral&utm_campaign=comparison-42crunch"><img src="https://escape.tech/blog/content/images/2023/10/book-demo.png" class="kg-image" alt loading="lazy" width="2000" height="703" srcset="https://escape.tech/blog/content/images/size/w600/2023/10/book-demo.png 600w, https://escape.tech/blog/content/images/size/w1000/2023/10/book-demo.png 1000w, https://escape.tech/blog/content/images/size/w1600/2023/10/book-demo.png 1600w, https://escape.tech/blog/content/images/2023/10/book-demo.png 2250w" sizes="(min-width: 720px) 720px"></a></figure><p>If you would like to learn more via live demo and see Escape's power in action with your APIs, we would love to connect with you.  </p><p></p>
+        </section>
+
+
+    </article>
+</main>
+
+
+
+
+            <aside class="read-more-wrap">
+                <div class="read-more inner">
+                        
+<article class="post-card post featured ">
+
+    <a class="post-card-image-link" href="/blog/webinar-building-your-product-security-roadmap/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/11/webinar-product-security.png 300w,
+                    /blog/content/images/size/w600/2023/11/webinar-product-security.png 600w,
+                    /blog/content/images/size/w1000/2023/11/webinar-product-security.png 1000w,
+                    /blog/content/images/size/w2000/2023/11/webinar-product-security.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/11/webinar-product-security.png"
+            alt="Upcoming Webinar: Building Your Product Security Roadmap"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/webinar-building-your-product-security-roadmap/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Upcoming Webinar: Building Your Product Security Roadmap</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Whether you're in the first few weeks of your ProdSec journey or building your Product security program for 2024, you might feel lost trying to wrap your head around all the attack surface your org faces and identifying some of the biggest security gaps. Don't worry, we're here to help!</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/alexandra/" class="static-avatar">
+                        <img class="author-profile-image" src="/blog/content/images/size/w100/2023/09/profile.jpeg" alt="Alexandra Charikova" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/alexandra/">Alexandra Charikova</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-09">Nov 9, 2023</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post featured ">
+
+    <a class="post-card-image-link" href="/blog/case-study-how-lightspeed-ensures-full-security-compliance-with-escape/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/10/escape-lightspeed.png 300w,
+                    /blog/content/images/size/w600/2023/10/escape-lightspeed.png 600w,
+                    /blog/content/images/size/w1000/2023/10/escape-lightspeed.png 1000w,
+                    /blog/content/images/size/w2000/2023/10/escape-lightspeed.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/10/escape-lightspeed.png"
+            alt="Case Study: How Lightspeed ensures full security compliance with Escape"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/case-study-how-lightspeed-ensures-full-security-compliance-with-escape/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Case Study: How Lightspeed ensures full security compliance with Escape</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Lightspeed, a technology partner to more than 160,000 global retail and hospitality businesses, has recently transitioned to a centralized payments model and adopted GraphQL APIs as a cornerstone of its operations. GraphQL allowed Lightspeed to improve both efficiency and flexibility in data retrieval, resulting in better overall system performance.</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/alexandra/" class="static-avatar">
+                        <img class="author-profile-image" src="/blog/content/images/size/w100/2023/09/profile.jpeg" alt="Alexandra Charikova" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/alexandra/">Alexandra Charikova</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-09">Nov 9, 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post ">
+
+    <a class="post-card-image-link" href="/blog/devops-vs-devsecops/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/11/devops-vs-devsecops-2.png 300w,
+                    /blog/content/images/size/w600/2023/11/devops-vs-devsecops-2.png 600w,
+                    /blog/content/images/size/w1000/2023/11/devops-vs-devsecops-2.png 1000w,
+                    /blog/content/images/size/w2000/2023/11/devops-vs-devsecops-2.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/11/devops-vs-devsecops-2.png"
+            alt="DevOps vs DevSecOps: exploring the key differences and how to make the shift"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/devops-vs-devsecops/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">DevOps vs DevSecOps: exploring the key differences and how to make the shift</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>In the fast-paced world of software development, companies are constantly searching for ways to deliver high-quality products quickly and efficiently. The evolution of DevOps revolutionized the industry by merging development and operations teams, breaking down silos, and fostering collaboration and communication.
+
+However, as startups and businesses strive for agility and</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/quentin/" class="static-avatar">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/e7c9d1795b321849f3d7a36b6a522d59?s&#x3D;250&amp;r&#x3D;x&amp;d&#x3D;mp" alt="Quentin Lieumont" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/quentin/">Quentin Lieumont</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-03">Nov 3, 2023</time> <span class="bull">&bull;</span> 9 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                </div>
+            </aside>
+
+
+
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="https://escape.tech/blog">Escape - The API Security Blog</a> &copy; 2023</section>
+            <nav class="site-footer-nav">
+                <ul class="nav">
+    <li class="nav-get-a-demo"><a href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=blog&utm_medium=referral&utm_campaign=footer">Get a Demo</a></li>
+    <li class="nav-best-practices"><a href="https://escape.tech/blog/tag/best-practices/">Best Practices</a></li>
+    <li class="nav-case-studies"><a href="https://escape.tech/blog/tag/case-study/">Case Studies</a></li>
+    <li class="nav-learn-how-to-test-your-graphql-apis"><a href="https://escape.tech/blog/testing-your-graphql-api/">Learn How to Test Your GraphQL APIs</a></li>
+    <li class="nav-how-to-use-graphql-with-postman"><a href="https://escape.tech/blog/getting-started-with-postman-graphql/">How to use GraphQL with Postman</a></li>
+    <li class="nav-graphql-security"><a href="https://escape.tech/blog/tag/graphql/">GraphQL Security</a></li>
+    <li class="nav-graphql-errors"><a href="https://escape.tech/blog/graphql-errors-the-good-the-bad-and-the-ugly/">GraphQL Errors</a></li>
+    <li class="nav-graphql-armor"><a href="https://escape.tech/graphql-armor/">GraphQL Armor</a></li>
+    <li class="nav-about-us"><a href="https://escape.tech/company/">About Us</a></li>
+    <li class="nav-privacy-policy"><a href="https://escape.tech/privacy/">Privacy Policy</a></li>
+    <li class="nav-api-security-academy"><a href="https://escape.tech/academy/">API Security Academy</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="/blog/assets/built/casper.js?v=1021adb4b4"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.gh-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.gh-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3, h4',
+    });
+</script>
+<!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MDMBJH6V"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-jsx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26857953.js"></script>
+<!-- End of HubSpot Embed Code --> <script>
+    tocbot.init({
+        tocSelector: '.toc',
+        linkClass: 'toc-link',
+        orderedList: true,
+        headingSelector: 'h2,h3',
+        collapseDepth: 3,
+        contentSelector: '.gh-content',
+        ignoreSelector: '.kg-header-card > *',
+        headingsOffset: 40,
+        scrollSmooth: true,
+		scrollSmoothDuration: 420,
+  		scrollSmoothOffset: -40,
+        hasInnerContainers: true
+    });
+</script>
+
+</body>
+</html>

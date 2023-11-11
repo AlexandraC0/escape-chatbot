@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>DevOps vs DevSecOps: differences &amp; how to shift</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        :root {
+            --button-bg-color: #ffffff;
+            --button-text-color: var(--color-darkgrey);
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Titillium+Web:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" type="text/css" href="/blog/assets/built/screen.css?v=1021adb4b4" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+    <meta name="description" content="Explore the differences between DevOps vs DevSecOps, the role of a DevSecOps engineer, and how to transition from DevOps to DevSecOps.">
+    <link rel="icon" href="https://escape.tech/blog/content/images/size/w256h256/2021/09/ESCAPE-LOGO-28-07-2021-08_1000.png" type="image/png">
+    <link rel="canonical" href="https://escape.tech/blog/devops-vs-devsecops/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://escape.tech/blog/devops-vs-devsecops/amp/">
+    
+    <meta property="og:site_name" content="Escape - The API Security Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="DevOps vs DevSecOps: differences &amp; how to shift">
+    <meta property="og:description" content="Explore the differences between DevOps vs DevSecOps, the role of a DevSecOps engineer, and how to transition from DevOps to DevSecOps.">
+    <meta property="og:url" content="https://escape.tech/blog/devops-vs-devsecops/">
+    <meta property="og:image" content="https://escape.tech/blog/content/images/2023/11/devops-vs-devsecops-2.png">
+    <meta property="article:published_time" content="2023-11-03T15:18:52.000Z">
+    <meta property="article:modified_time" content="2023-11-03T15:18:52.000Z">
+    <meta property="article:tag" content="DevSecOps">
+    <meta property="article:tag" content="DevOps">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevOps vs DevSecOps">
+    <meta name="twitter:description" content="Explore the key differences between DevOps &amp; DevSecOps and how to make the shift.">
+    <meta name="twitter:url" content="https://escape.tech/blog/devops-vs-devsecops/">
+    <meta name="twitter:image" content="https://escape.tech/blog/content/images/2023/11/devops-vs-devsecops-3.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Quentin Lieumont">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="DevSecOps, DevOps">
+    <meta name="twitter:site" content="@EscapeTechHQ">
+    <meta property="og:image:width" content="1050">
+    <meta property="og:image:height" content="586">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Escape - The API Security Blog",
+        "url": "https://escape.tech/blog/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://escape.tech/blog/content/images/2022/05/escape-logo.0e6d59f.svg",
+            "width": 141,
+            "height": 36
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Quentin Lieumont",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/e7c9d1795b321849f3d7a36b6a522d59?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://escape.tech/blog/author/quentin/",
+        "sameAs": [
+            "https://www.linkedin.com/in/quentin-lieumont/"
+        ]
+    },
+    "headline": "DevOps vs DevSecOps: differences &amp; how to shift",
+    "url": "https://escape.tech/blog/devops-vs-devsecops/",
+    "datePublished": "2023-11-03T15:18:52.000Z",
+    "dateModified": "2023-11-03T15:18:52.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://escape.tech/blog/content/images/2023/11/devops-vs-devsecops-2.png",
+        "width": 1050,
+        "height": 586
+    },
+    "keywords": "DevSecOps, DevOps",
+    "description": "In the fast-paced world of software development, companies are constantly searching for ways to deliver high-quality products quickly and efficiently. The evolution of DevOps revolutionized the industry by merging development and operations teams, breaking down silos, and fostering collaboration and communication.\n\nHowever, as startups and businesses strive for agility and speed, security often falls by the wayside. This is where DevSecOps steps in - the integration of security practices into th",
+    "mainEntityOfPage": "https://escape.tech/blog/devops-vs-devsecops/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.69">
+    <link rel="alternate" type="application/rss+xml" title="Escape - The API Security Blog" href="https://escape.tech/blog/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.36/umd/portal.min.js" data-i18n="false" data-ghost="https://escape.tech/blog/" data-key="0e4cafc1e55c09b1ec7809b460" data-api="https://escape.tech/blog/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="0e4cafc1e55c09b1ec7809b460" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://escape.tech/blog/" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/announcement-bar@~1.1/umd/announcement-bar.min.js" data-announcement-bar="https://escape.tech/blog/" data-api-url="https://escape.tech/blog/members/api/announcement/" crossorigin="anonymous"></script>
+    <link href="https://escape.tech/blog/webmentions/receive/" rel="webmention">
+    <script defer src="/blog/public/cards.min.js?v=1021adb4b4"></script>
+    <link rel="stylesheet" type="text/css" href="/blog/public/cards.min.css?v=1021adb4b4">
+    <script defer src="/blog/public/member-attribution.min.js?v=1021adb4b4"></script>
+    <script id="userled-sdk-snippet">
+  window.userledSettings={app_id:"21ef73bb-cd0a-4f2b-a193-fa051a5974a1"},window.userledSnippetTs=(new Date).getTime(),(function(){if(!window.Userled){window.Userled=function(){return e.call(arguments)};var e=window.Userled;e.call=function(n){return new Promise((function(i,d){e.queue.push([].concat.apply([i,d],n))}))},e.queue=[],e.snippetVersion="4.0.0",window.Userled("page")}})();
+</script>
+<script id="userled-sdk" type="module" src="https://sdk.userledclient.io?appId=21ef73bb-cd0a-4f2b-a193-fa051a5974a1&snippetVersion=4.0.0" data-cfasync="false"></script>
+
+
+<!-- Google tag (gtag.js): Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-234004425-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-234004425-1');
+    </script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KYN4GPPPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0KYN4GPPPE');
+</script>
+<script>
+    var gh_white_logo = 'https://escape.tech/assets/escape-logo.png';
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics - whole website-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FTS8Y5Z4N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-5FTS8Y5Z4N');
+    </script>
+
+ <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MDMBJH6V');
+    </script>
+    <!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager - blog-->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','data layer,'GTM-MLMM8LHP');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+    var gh_white_logo = 'https://escape.tech/assets/escape-logo.png';
+</script>
+
+
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="WIHBBNEH" defer></script>
+<!-- / Fathom -->
+<!-- Schema -->
+<script type="application/ld+json">
+ {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://escape.tech/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://escape.tech/blog"
+      }]
+    }
+</script>
+<!-- Schema -->
+<style>
+.container.large {
+    max-width: calc(750px + 8vw);
+}
+</style>
+<script>
+    var gh_white_logo = "https://i.ibb.co/cx8zN47/ESCAPE-LOGO-28-07-2021-02.png"
+</script>
+
+
+<!-- Prism.js - syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+.gh-head {
+    position: -webkit-sticky; /* Older Safari browsers */
+    position: sticky; /* Most other modern browsers including Safari */
+    top: 0;
+    z-index: 4000;
+}
+/* Shine Case study style */
+#strongshine-chose-escape-to-enhance-its-application-security-achieve-a-thorough-inventory-of-their-apis-and-help-developers-fix-issues-quicklystrong,
+#within-a-week-shine-covered-four-applications-accounting-for-300-endpoints-this-rapid-coverage-led-to-the-discovery-and-fixing-of-at-least-strong2-critical-vulnerabilities-in-less-than-24-hours-post-discoverystrong {
+  width: 65%;
+  font-size: 30px;
+  color: #01e2b7;
+}
+@media (max-width: 640px) {
+  #strongshine-chose-escape-to-enhance-its-application-security-achieve-a-thorough-inventory-of-their-apis-and-help-developers-fix-issues-quicklystrong,
+  #within-a-week-shine-covered-four-applications-accounting-for-300-endpoints-this-rapid-coverage-led-to-the-discovery-and-fixing-of-at-least-strong2-critical-vulnerabilities-in-less-than-24-hours-post-discoverystrong {
+    width: 90%;
+	font-size: 1.2em;
+  }
+}
+#strongstart-securing-your-apis-for-freestrong {
+  margin-bottom: 0.5em;
+}
+.kg-header-card a.kg-header-card-button {
+  display: inline-block !important;
+  padding: 20px 16.5px !important;
+  font-size: 1.4rem !important;
+  font-size: 20px !important;
+  line-height: 0.325em !important;
+  color: #1a1b3d !important;
+  background-color: #05e2b7 !important;
+  border-radius: 6px !important;
+}
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css" rel="stylesheet"><style>:root {--ghost-accent-color: #1A1B3D;}</style>
+
+</head>
+<body class="post-template tag-devsecops tag-devops has-sans-body">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head">
+        <nav class="gh-head-inner inner gh-container">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="https://escape.tech/blog">
+                        <img width="140" src="https://escape.tech/blog/content/images/2022/05/escape-logo.0e6d59f.svg" alt="Escape - The API Security Blog"  />
+                </a>
+                <div class="mobile-cta-container">
+                    <a style="border-radius: 6px; background-color: #05e2b7; color: #1a1b3d; margin-right: 0; font-weight: 600; padding: 10px;" href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=navbar&utm_medium=blog">GET A DEMO</a>
+                </div>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-escape-platform"><a href="https://escape.tech">Escape Platform</a></li>
+    <li class="nav-case-studies"><a href="https://escape.tech/blog/tag/case-study/">Case studies</a></li>
+    <li class="nav-best-practices"><a href="https://escape.tech/blog/tag/best-practices/">Best Practices</a></li>
+</ul>
+
+                <div class="gh-head-actions">
+                <a class="try-for-free-button" style="border-radius: 6px; background-color: #05e2b7; color: #1a1b3d; margin-right: 27px; font-weight: 600; padding: 10px;" href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=navbar&utm_medium=blog">GET A DEMO</a>
+                <button class="gh-search-icon" aria-label="search" data-ghost-search style="display: inline-flex; justify-content: center; align-items: center; width: 32px; height: 32px; padding: 0 8px; border: 0; color: inherit; background-color: transparent; cursor: pointer; outline: none; margin: 0 10px;">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M14.949 14.949a1 1 0 0 1 1.414 0l6.344 6.344a1 1 0 0 1-1.414 1.414l-6.344-6.344a1 1 0 0 1 0-1.414Z" fill="currentColor"/><path d="M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm-9 7a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z" fill="currentColor"/></svg>
+                </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        
+
+
+
+<main id="site-main" class="site-main">
+    <article class="article post tag-devsecops tag-devops image-small">
+
+        <header class="article-header gh-canvas">
+
+            <section class="article-tag">
+                <a href="https://escape.tech/blog/tag/devsecops/">DevSecOps</a>
+            </section>
+
+            <h1 class="article-title">DevOps vs DevSecOps: exploring the key differences and how to make the shift</h1>
+
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <a href="/blog/author/quentin/" class="author-avatar">
+                                <img class="author-profile-image" src="https://www.gravatar.com/avatar/e7c9d1795b321849f3d7a36b6a522d59?s&#x3D;250&amp;r&#x3D;x&amp;d&#x3D;mp" alt="Quentin Lieumont" />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="article-byline-meta">
+                        <h4 class="author-name"><a href="/blog/author/quentin/">Quentin Lieumont</a></h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date" datetime="2023-11-03">Nov 3, 2023</time>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> 9 min read</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <figure class="article-image">
+                <picture>
+                    <!-- Serve the WebP format if the browser supports it -->
+                    <source
+                        srcset="/blog/content/images/size/w300/format/webp/2023/11/devops-vs-devsecops-2.png 300w,
+                                /blog/content/images/size/w600/format/webp/2023/11/devops-vs-devsecops-2.png 600w,
+                                /blog/content/images/size/w1000/format/webp/2023/11/devops-vs-devsecops-2.png 1000w,
+                                /blog/content/images/size/w2000/format/webp/2023/11/devops-vs-devsecops-2.png 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        type="image/webp"
+                    >
+                     <!-- Serve original file format as a fallback -->
+                    <img
+                        srcset="/blog/content/images/size/w300/2023/11/devops-vs-devsecops-2.png 300w,
+                                /blog/content/images/size/w600/2023/11/devops-vs-devsecops-2.png 600w,
+                                /blog/content/images/size/w1000/2023/11/devops-vs-devsecops-2.png 1000w,
+                                /blog/content/images/size/w2000/2023/11/devops-vs-devsecops-2.png 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        src="/blog/content/images/size/w2000/2023/11/devops-vs-devsecops-2.png"
+                        alt="DevOps vs DevSecOps: exploring the key differences and how to make the shift"
+                    />
+                </picture>
+            </figure>
+        </header>
+
+        <section class="gh-content gh-canvas">
+            <p></p><p>In the fast-paced world of software development, companies are constantly searching for ways to deliver high-quality products quickly and efficiently. The evolution of DevOps revolutionized the industry by merging development and operations teams, breaking down silos, and fostering collaboration and communication.</p><p>However, as startups and businesses strive for agility and speed, security often falls by the wayside. This is where DevSecOps steps in - the integration of security practices into the DevOps framework.</p><p>In this article, we will explore the transition from DevOps to DevSecOps, the role of a DevSecOps engineer in a startup, and the importance of integrating security into the software development lifecycle.</p><p>Additionally, we will delve into the implementation of Dynamic Security Application Testing (DAST) within the continuous integration and continuous delivery (CI/CD) pipeline. By shifting left and making security a priority from the very beginning, startups can enhance their business value, protect their users, and deliver secure and reliable software.</p><div class="toc"></div>
+<style>
+.toc:before {
+  content: "Table of contents";
+  display: block;
+  margin-bottom: 20px;
+  font-size: larger;
+  font-weight: bold;
+  border-bottom: 1px dashed #dadada;
+  padding-bottom: 10px;
+}
+.toc {
+  padding: 30px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+a.toc-link {
+  font-size: 80%;
+  text-decoration: none;
+}
+li.toc-list-item {
+    margin-top: 0;
+}
+.toc-list .is-collapsible {
+  margin-left: 15px;
+  color: #666;
+}
+</style><h2 id="an-overview-of-devops">An overview of DevOps</h2><h3 id="from-ops-to-devops">From Ops to DevOps</h3><p>Initially, before the advent of DevOps, the traditional siloed methods of software development were in place. The development and operational teams worked in isolation, leading to several issues, such as longer development cycles, less collaboration, poor quality output, and slower time to market. The development team was tasked with writing the code while the operations team was responsible for its deployment and maintenance. Any problems arising in production were thrown over the wall to the operations team without much communication and collaboration between the two teams.</p><p>The consequences of such a disjointed and disordered approach were disastrous for companies, leading to conflicts, slow product releases, and unsatisfied customers. This was more damaging in the case of startups, as they are expected to be agile, flexible, and faster in their operations.</p><p>Acknowledging the issues inherent in these traditional methodologies, the IT industry began seeking out efficient ways to improve the overall process. This pursuit led to the evolution of DevOps, a practice that amalgamates software development and IT operations. DevOps heralded a cultural shift towards a more collaborative and communicative environment, breaking down the walls between the development and operations teams.</p><div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">Over the years, DevOps has emerged as a crucial component in enabling organizations to achieve this vision of continuous development and deployment.</div></div><p>Not only did DevOps mitigate the problems posed by the traditional model, but it also introduced a host of additional benefits that have now come to be considered essential for startups. Through continuous integration, continuous deployment, automated testing, and infrastructure as code, DevOps has enabled startups to reduce time to market, enforce reliability, increase the speed and quality of releases, and maintain a high frequency of deployments.</p><p>With the numerous advantages brought by the DevOps model, startups were no longer stuck in the rut of delayed deliveries and slow response time. Yet, as they chugged along the path of efficiency and speed, one aspect remained somewhat neglected - that's security.</p><h2 id="devops-vs-devsecops">DevOps vs DevSecOps </h2><h3 id="why-do-we-shift-from-the-devops-to-devsecops">Why do we shift from the DevOps to DevSecOps?</h3><p>Traditionally, security was a separate consideration, often addressed at the end of the software development lifecycle. This created a tension between speed and security, with teams tempted to rush toward deployment, prioritizing speed over security. Unfortunately, in our digital age, security can't be an afterthought.</p><p>Less than 5 years after the embrace of DevOps, the IT landscape began shifting to DevSecOps. The core idea of DevSecOps is to 'shift security to the left', i.e., equipping even the early stages of software development with robust security checks and balances.</p><p>This eliminates the last-minute scramble to tie loose ends and allows startups to find vulnerabilities early when they're easier and less costly to fix.</p><div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">Basically, DevSecOps asks, "Why tack on security as an afterthought when it can be embedded in the entire process?"</div></div><p>So, startups began shifting to DevSecOps, not only to keep up with their fast-paced decision-making and often quicker development cycles but more importantly, as a business-essential move to protect their company's and customers' data right from the start.</p><p>By integrating DevOps and security, DevSecOps works with Devs to provide remediation actions instead of long lists of problems. Thus, shifting from DevOps to DevSecOps has been a tactical move for startups, enhancing their business value and gaining trust from their users. To read more about the link between DevOps and shift left, read <a href="https://escape.tech/blog/why-does-devops-recommend-shift-left-testing-principles/">this article</a>.</p><h3 id="understanding-the-role-of-a-devsecops-in-a-startup">Understanding the role of a DevSecOps in a startup</h3><p>In this chapter, we will walk through some examples of challenges that DevSecOps handles and why this is an important step forward to embrace this philosophy.</p><h3 id="integrating-security-into-the-software-life-cycle">Integrating security into the software life cycle</h3><p>One of the primary challenges for a DevSecOps engineer is fitting security into the entire software development life cycle.</p><p>Traditional approaches treated security as a separate entity that would come into play after the development process was complete. However, in DevSecOps, security becomes an integral part of every step of the software development process.</p><p>But in a DevSecOps model, the DevSecOps engineer has to drive the adoption of security processes right from planning, coding, and testing to release, deployment, and monitoring. This might involve automating security controls, setting up vulnerability and compliance policies, or even training teams on security best practices.</p><p>Shifting these technologies through the Developers' landscape not only creates more secure products but also improves their quality of life.</p><p>In short, integrating security into the software life cycle underlines the core idea of DevSecOps - simpler security is better for both Devs and Ops. The DevSecOps engineer ensures that <strong>security isn't just a reaction to threats, but a proactive, preventative, and continuous approach</strong> throughout the development process.</p><h3 id="keeping-up-with-rapid-releases">Keeping up with rapid releases</h3><p>In a fast-evolving scenario, where new code commits are happening all the time, the role of a DevSecOps engineer involves ensuring that every version upgrade or feature update maintains a high level of security. Often, this means staying ahead of the game: foreseeing the security implications of changes, testing new functionalities for potential vulnerabilities, and ensuring that changes don't inadvertently weaken the existing security infrastructure.</p><p>However, it doesn’t stop once the release is rolled out. After deployment, they must continually monitor the application for any security issues that may have slipped through the cracks. This involves responding to new vulnerabilities as they are discovered and ensuring that patches and updates are promptly rolled out to the clients.</p><p>Keeping up with rapid releases is not just about quick reactions. It’s about creating a culture where security is baked into every code commit and every deployment. It’s about making sure that even in the race to innovate, startups don’t have to compromise their client’s trust and their reputation.</p><p>For sure, this could be challenging but the results: secure, reliable, and consistent software, are worth it. So, thank a DevSecOps engineer for that!</p><h2 id="a-practical-example-deploying-dast-in-cicd">A practical example: Deploying DAST in CI/CD</h2><p>Continuous Integration and Continuous Delivery, often termed CI/CD, is at the heart of modern DevOps practices. It's all about automating the stages of app development, from integrating code changes to delivering and deploying updates to production.</p><p>In Continuous Integration, developers merge their code changes into a central repository, followed by automatic builds, testing, and deployment. This happens multiple times a day, improving software quality and reducing the time to deploy: if the pipeline is green, it means that all tests succeed and the app is ready for release.</p><p>The second part is Continuous Delivery. It ensures that we can release new changes to customers quickly and sustainably. It involves automated testing beyond unit tests (like integration tests, performance tests, and others) to verify if the updates will not break the production system. Most importantly, eases the deployment workflow with a simple click of a button: no need to call the person who knows how to SSH to the production VM to run a shell script that does some magic.</p><div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">What is your time to value if anyone is able to deploy safely and securely?</div></div><p>But let's get back to how DevSecOps fits into this. Remember our friend, security? DevSecOps brings it right into the mix of CI/CD. It involves integrating security checks and tests into the CI/CD pipeline, essentially introducing continuous security on top of CI/CD.</p><p>Automated security scans are run at every stage of development. Vulnerabilities and flaws are detected and fixed early in the software development lifecycle, reinforcing the principle of 'shifting security to the left'. By automating security testing, DevSecOps ensures that security is as continuous as integration and delivery.</p><p>In essence, DevSecOps leverages the principles and benefits of CI/CD and takes it a step further by making security an integral part of the pipeline. So, you get a faster, more reliable, and more secure software development process. Sounds like a win-win-win, right?</p><p>To take a practical example: you don't want to discover secrets committed to your code right? But do you want to test it after production deployment, before it, after each merge on the dev branch, in merge requests, or right into the developers' computers using pre-commit hooks like <a href="https://escape.tech/blog/devsecops-101-part-2-detecting-insecure-source-code/">Semgrep</a>? Shift Left is not only improving security, it's also providing developers tools to not think about security but help them not make mistakes.</p><h3 id="dynamic-security-application-testing-dast">Dynamic Security Application Testing (DAST)</h3><p>As part of the DevSecOps team, the primary goal is to ensure that no security vulnerabilities make it to production. One of the top strategies to do this job is DAST or Dynamic Application Security Testing.</p><p>Unlike its static counterpart (SAST), DAST evaluates the application from the outside while it's running, just as a real attacker would. Think of it as a simulated hacker, working hard to spot weaknesses. It performs penetration testing and detects security vulnerabilities that could be exploited. It’s particularly good at finding execution flow flaws and runtime issues that can't be spotted by static testing.</p><p>DAST can expose issues like insecure server configurations, software bugs, injection attacks, and more, allowing us to fix them before they become a potential threat. The beauty of DAST is that it doesn’t require code access and can immediately start testing.</p><div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">DAST is like having your own security guard, constantly patrolling and checking for intruders.</div></div><p>Within DevSecOps, DAST becomes even more essential. As we constantly integrate new code and deliver updates, DAST provides automated, continuous testing targeting these changes. The ultimate goal? To ensure that every release improves the application while maintaining robust security standards.</p><p>So, DAST remains one of the most DevSecOps trusted tools in their security arsenal, ensuring that every line of code is as secure as possible.</p><h2 id="how-we-run-dast-in-cicd-at-escape">How we run DAST in CI/CD at Escape</h2><p>At Escape we want to always keep providing value to our customers by deploying to production our work multiple times a day. To do so, we want to be sure that the QA environment is always secure as a flaw in it may be in production in less than 12 hours.</p><p>At Escape our job is to help companies to shift left with the DevSecOps philosophy. We are creating a DAST that can help Security teams to be aware of vulnerabilities but also help developers to solve them. You can <a href="https://app.escape.tech/register/?ref=blog" rel="noreferrer">try it for yourself for free here</a>. </p><p>Multiple actions have been set up to ensure deployment quality like <a href="https://escape.tech/blog/automate-secure-deployment-gitlab-ci-with-syft-and-grype/">container image scanning</a> but the most important piece is the "Escape on Escape" scan. We use GitLab CI to run a scan on our QA environment each time a commit is made into it (but this action is available for any CI/CD, <a href="https://docs.escape.tech/ci-cd/?ref=escape.tech">read the Escape docs</a>).</p><pre><code class="language-yaml">Escape:
+  allow_failure: true
+  variables:
+    ESCAPE_APPLICATION_ID: &lt;RETRACTED&gt;
+    ESCAPE_API_KEY: &lt;RETRACTED&gt;
+    TIMEOUT: 3600
+  image: node:alpine
+  before_script:
+    - npm install -g @escape.tech/action
+  script:
+    - escape-action
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" &amp;&amp; $SCHEDULE_TYPE == "escape"
+    - if: $CI_PIPELINE_SOURCE == "push" &amp;&amp; $CI_COMMIT_BRANCH == "QA"
+</code></pre>
+<p>With this job, we can ensure that QA is scanned a least once a day (we have scheduled a daily pipeline) and also after each update.</p><p>This has helped us multiple times by not only detecting some server configuration errors but also pointing to business logic race conditions as the scanner doesn't only assess vulnerabilities but uses the application to find not only security flaws but all types of bugs.</p><h1 id="conclusion">Conclusion</h1><p>As we wrap up, it's hard to tamp down the excitement we feel about the incredible transformation that DevSecOps has brought about, especially for startups like ours.</p><p>Thinking about it, the seamless fusion of development, operations, and security isn’t just the future of the software industry, it's the present!<br>In making the shift from DevOps to DevSecOps, we're taking a giant leap towards enhanced efficiency and secure code. By embracing practices such as CI/CD and incorporating DAST, we've created an environment where code releases are not just fast and frequent, but also reliable and secure.</p><p>So here’s to more code commits, more deploys, more secure software, and ever-evolving DevSecOps practices!</p><p>Let’s keep pushing the boundaries of what's possible when Devs, Ops, and Sec embrace and unite their work.</p><hr><p>💡<strong>Want to learn more about DevSecOps practices? Check out the following articles:</strong></p><ul><li><a href="https://escape.tech/blog/the-ultimate-devsecops-checklist/">Top 7 DevSecOps Best Practices</a></li><li><a href="https://escape.tech/blog/application-security-101-part-1-software-component-analysis/">DevSecOps 101 part 1: Software Component Analysis (SCA)</a></li><li><a href="https://escape.tech/blog/devsecops-101-part-2-detecting-insecure-source-code/">DevSecOps 101 Part 2: Detecting Insecure Source Code&nbsp;</a></li><li><a href="https://escape.tech/blog/devsecops-part-iii-scanning-live-web-applications/">DevSecOps 101 Part 3: Scanning Live Web Applications with Nuclei</a></li><li><a href="https://escape.tech/blog/devsecops-part-4-scanning-docker-images-with-trivy/">DevSecOps 101 Part 4: Scanning Docker Images With Trivy</a></li><li><a href="https://escape.tech/blog/automate-secure-deployment-gitlab-ci-with-syft-and-grype/">How to automate and secure deployment within GitLab CI with Syft and Grype</a></li></ul><p></p><p></p><p></p><p></p>
+        </section>
+
+
+    </article>
+</main>
+
+
+
+
+            <aside class="read-more-wrap">
+                <div class="read-more inner">
+                        
+<article class="post-card post featured ">
+
+    <a class="post-card-image-link" href="/blog/webinar-building-your-product-security-roadmap/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/11/webinar-product-security.png 300w,
+                    /blog/content/images/size/w600/2023/11/webinar-product-security.png 600w,
+                    /blog/content/images/size/w1000/2023/11/webinar-product-security.png 1000w,
+                    /blog/content/images/size/w2000/2023/11/webinar-product-security.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/11/webinar-product-security.png"
+            alt="Upcoming Webinar: Building Your Product Security Roadmap"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/webinar-building-your-product-security-roadmap/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Upcoming Webinar: Building Your Product Security Roadmap</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Whether you're in the first few weeks of your ProdSec journey or building your Product security program for 2024, you might feel lost trying to wrap your head around all the attack surface your org faces and identifying some of the biggest security gaps. Don't worry, we're here to help!</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/alexandra/" class="static-avatar">
+                        <img class="author-profile-image" src="/blog/content/images/size/w100/2023/09/profile.jpeg" alt="Alexandra Charikova" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/alexandra/">Alexandra Charikova</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-09">Nov 9, 2023</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post featured ">
+
+    <a class="post-card-image-link" href="/blog/case-study-how-lightspeed-ensures-full-security-compliance-with-escape/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/10/escape-lightspeed.png 300w,
+                    /blog/content/images/size/w600/2023/10/escape-lightspeed.png 600w,
+                    /blog/content/images/size/w1000/2023/10/escape-lightspeed.png 1000w,
+                    /blog/content/images/size/w2000/2023/10/escape-lightspeed.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/10/escape-lightspeed.png"
+            alt="Case Study: How Lightspeed ensures full security compliance with Escape"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/case-study-how-lightspeed-ensures-full-security-compliance-with-escape/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Case Study: How Lightspeed ensures full security compliance with Escape</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Lightspeed, a technology partner to more than 160,000 global retail and hospitality businesses, has recently transitioned to a centralized payments model and adopted GraphQL APIs as a cornerstone of its operations. GraphQL allowed Lightspeed to improve both efficiency and flexibility in data retrieval, resulting in better overall system performance.</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/alexandra/" class="static-avatar">
+                        <img class="author-profile-image" src="/blog/content/images/size/w100/2023/09/profile.jpeg" alt="Alexandra Charikova" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/alexandra/">Alexandra Charikova</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-09">Nov 9, 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post ">
+
+    <a class="post-card-image-link" href="/blog/escape-vs-stackhawk/">
+        <img class="post-card-image"
+            srcset="/blog/content/images/size/w300/2023/10/escape-vs-stackhawk.png 300w,
+                    /blog/content/images/size/w600/2023/10/escape-vs-stackhawk.png 600w,
+                    /blog/content/images/size/w1000/2023/10/escape-vs-stackhawk.png 1000w,
+                    /blog/content/images/size/w2000/2023/10/escape-vs-stackhawk.png 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="/blog/content/images/size/w600/2023/10/escape-vs-stackhawk.png"
+            alt="Escape vs StackHawk"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/blog/escape-vs-stackhawk/">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Escape vs StackHawk</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Today, attackers prioritize exploiting an application's business logic flaws and API vulnerabilities, which may result in the unauthorized extraction of sensitive data. Understanding an application's business logic is challenging, and requires a security platform that comprehends an application's functionalities to address complex API attacks.
+
+Escape is the only API Security</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="/blog/author/escape/" class="static-avatar">
+                        <img class="author-profile-image" src="/blog/content/images/size/w100/2021/09/ESCAPE-LOGO-28-07-2021-06.jpg" alt="Escape" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="/blog/author/escape/">Escape</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-02">Nov 2, 2023</time> <span class="bull">&bull;</span> 8 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                </div>
+            </aside>
+
+
+
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="https://escape.tech/blog">Escape - The API Security Blog</a> &copy; 2023</section>
+            <nav class="site-footer-nav">
+                <ul class="nav">
+    <li class="nav-get-a-demo"><a href="https://calendly.com/d/4q4-wkr-p8c/escape-product-demo?utm_source=blog&utm_medium=referral&utm_campaign=footer">Get a Demo</a></li>
+    <li class="nav-best-practices"><a href="https://escape.tech/blog/tag/best-practices/">Best Practices</a></li>
+    <li class="nav-case-studies"><a href="https://escape.tech/blog/tag/case-study/">Case Studies</a></li>
+    <li class="nav-learn-how-to-test-your-graphql-apis"><a href="https://escape.tech/blog/testing-your-graphql-api/">Learn How to Test Your GraphQL APIs</a></li>
+    <li class="nav-how-to-use-graphql-with-postman"><a href="https://escape.tech/blog/getting-started-with-postman-graphql/">How to use GraphQL with Postman</a></li>
+    <li class="nav-graphql-security"><a href="https://escape.tech/blog/tag/graphql/">GraphQL Security</a></li>
+    <li class="nav-graphql-errors"><a href="https://escape.tech/blog/graphql-errors-the-good-the-bad-and-the-ugly/">GraphQL Errors</a></li>
+    <li class="nav-graphql-armor"><a href="https://escape.tech/graphql-armor/">GraphQL Armor</a></li>
+    <li class="nav-about-us"><a href="https://escape.tech/company/">About Us</a></li>
+    <li class="nav-privacy-policy"><a href="https://escape.tech/privacy/">Privacy Policy</a></li>
+    <li class="nav-api-security-academy"><a href="https://escape.tech/academy/">API Security Academy</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="/blog/assets/built/casper.js?v=1021adb4b4"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.gh-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.gh-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3, h4',
+    });
+</script>
+<!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MDMBJH6V"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-jsx.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26857953.js"></script>
+<!-- End of HubSpot Embed Code --> <script>
+    tocbot.init({
+        tocSelector: '.toc',
+        linkClass: 'toc-link',
+        orderedList: true,
+        headingSelector: 'h2,h3',
+        collapseDepth: 3,
+        contentSelector: '.gh-content',
+        ignoreSelector: '.kg-header-card > *',
+        headingsOffset: 40,
+        scrollSmooth: true,
+		scrollSmoothDuration: 420,
+  		scrollSmoothOffset: -40,
+        hasInnerContainers: true
+    });
+</script>
+
+</body>
+</html>
